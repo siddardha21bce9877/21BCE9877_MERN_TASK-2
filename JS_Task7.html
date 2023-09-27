@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Task7</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    #train {
+      position: relative;
+      width: 100px;
+      height: 50px;
+      background: url('images1.png') no-repeat;
+      background-size: cover;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-name: moveTrain;
+    }
+
+    @keyframes moveTrain {
+      0% {
+        left: -100px;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+  </style>
+</head>
+<body>  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <div id="train"></div>
+        <p>Click the following buttons to handle animation:</p>
+        <button id="startBtn" class="btn btn-primary">Start</button>
+        <button id="stopBtn" class="btn btn-danger">Stop</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const train = document.getElementById('train');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+
+    startBtn.addEventListener('click', () => {
+      train.style.animationDuration = '5s'; 
+      train.style.animationPlayState = 'running';
+    });
+
+    stopBtn.addEventListener('click', () => {
+      train.style.animationPlayState = 'paused';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Task8</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    .registration-box {
+      background:linear-gradient(to bottom,rgba(197, 197, 13, 0.449), rgba(155, 6, 150, 0.581));;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .strength-indicator {
+      font-weight: bold;
+    }
+
+    .poor {
+      color: red;
+    }
+
+    .medium {
+      color: orange;
+    }
+
+    .strong {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="registration-box">
+          <h2 class="text-center">Registration Form</h2>
+          <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+              <span class="strength-indicator" id="firstNameIndicator"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+              <span class="strength-indicator" id="lastNameIndicator"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              <span class="strength-indicator" id="emailIndicator"></span>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              <span class="strength-indicator" id="passwordIndicator"></span>
+            </div>
+            <div class="form-group">
+              <label for="reenterPassword">Re-enter Password:</label>
+              <input type="password" class="form-control" id="reenterPassword" name="reenterPassword" placeholder="Re-enter Password">
+              <span class="strength-indicator" id="reenterPasswordIndicator"></span>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="male" name="gender" value="male">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="female" name="gender" value="female">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Age">
+                <span class="strength-indicator" id="ageIndicator"></span>
+              </div>
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+                <span class="strength-indicator" id="phoneNumberIndicator"></span>
+              </div>
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" name="address" rows="2" placeholder="Address"></textarea>
+                <span class="strength-indicator" id="addressIndicator"></span>
+              </div>
+              <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                <span class="strength-indicator" id="stateIndicator"></span>
+              </div>
+              <div class="form-group">
+                <label for="country">Country:</label>
+                <select class="form-control" id="country" name="country">
+                  <option>Choose your country</option>
+                  <option>Country 1</option>
+                  <option>Country 2</option>
+                  <option>Country 3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Languages Known:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="languagesKnown" value="English" id="englishCheckbox">
+                  <label class="form-check-label" for="englishCheckbox">English</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="languagesKnown" value="Kannada" id="kannadaCheckbox">
+                  <label class="form-check-label" for="kannadaCheckbox">Kannada</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="languagesKnown" value="Hindi" id="hindiCheckbox">
+                  <label class="form-check-label" for="hindiCheckbox">Hindi</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="languagesKnown" value="Telugu" id="teluguCheckbox">
+                  <label class="form-check-label" for="teluguCheckbox">Telugu</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="declarationCheckbox" name="declarationCheckbox">
+                <label class="form-check-label" for="declarationCheckbox">Hereby I declare all the details are true</label>
+              </div>
+              <p class="mt-3">Log in to <a href="#" id="ethnusLink">Ethnus Website</a></p>
+            <button type="submit" class="btn btn-danger btn-block mt-3">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const inputFields = ['firstName', 'lastName', 'email', 'password', 'reenterPassword','phoneNumber','address','state'];
+
+    inputFields.forEach(field => {
+      const inputField = document.getElementById(field);
+      const indicator = document.getElementById(`${field}Indicator`);
+
+      inputField.addEventListener('input', () => {
+        const inputValue = inputField.value.trim().length;
+        if (inputValue === 0) {
+          indicator.innerText = 'Poor';
+          indicator.classList.remove('medium', 'strong');
+          indicator.classList.add('poor');
+        } else if (inputValue >= 1 && inputValue <= 5) {
+          indicator.innerText = 'Medium';
+          indicator.classList.remove('poor', 'strong');
+          indicator.classList.add('medium');
+        } else {
+          indicator.innerText = 'Strong';
+          indicator.classList.remove('poor', 'medium');
+          indicator.classList.add('strong');
+        }
+      });
+    });
+
+    function validateForm() {
+      let valid = true;
+      inputFields.forEach(field => {
+        const inputField = document.getElementById(field);
+        if (inputField.value.trim() === '') {
+          valid = false;
+        }
+      });
+      return valid;
+    }
+  </script>
+</body>
+</html>

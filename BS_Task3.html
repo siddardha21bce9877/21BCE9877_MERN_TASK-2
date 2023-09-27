@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS_Task3</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style>
+    
+    .navbar {
+      background-color: #343a40;
+      color: white;
+    }
+    .navbar-brand {
+      color: white;
+    }
+    .navbar-nav .nav-link {
+      color: white;
+    }
+
+    
+    .pricing-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+    }
+    .pricing-card-heading {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    
+    .footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" >Company Name</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Enterprise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container mt-4">
+    <h1 class="text-center">Pricing</h1>
+    <p class="text-center">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <div class="pricing-card-heading bg-light">
+            <h3>Free</h3>
+          </div>
+          <p class="font-weight-bold">$0 <span class="text-muted">/mo</span></p>
+          <p>10 users included<br>
+            2 GB of storage<br> Email support<br>
+            Help center access</p>
+          <a href="#" class="btn btn-outline-primary">Sign Up for Free</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <div class="pricing-card-heading bg-light">
+            <h3>Pro</h3>
+          </div>
+          <p class="font-weight-bold">$15 <span class="text-muted">/mo</span></p>
+          <p>20 users included <br>10 GB of storage<br> Priority email support<br> Help center access</p>
+          <a href="#" class="btn btn-primary">Get started</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <div class="pricing-card-heading bg-light">
+            <h3>Enterprise</h3>
+          </div>
+          <p class="font-weight-bold">$29 <span class="text-muted">/mo</span></p>
+          <p>30 users included<br>
+            15 GB of storage<br> Phone and email support <br>Help center access</p>
+          <a href="#" class="btn btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer fixed-bottom">
+    <div class="container">
+      <div class="float-right">
+        <i class="fa fa-b" aria-hidden="true"></i>
+      </div>
+      <div class="text-center">
+        <a href="#">Features</a> |
+        <a href="#">Resources</a> |
+        <a href="#">About</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

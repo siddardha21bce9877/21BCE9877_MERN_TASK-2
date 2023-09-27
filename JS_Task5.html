@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS_Task5</title>
+  <style>
+    .error {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body><center>
+  <form id="contactForm" onsubmit="return validateForm()">
+    <div>
+      <label for="name">Name: </label>
+      <div>
+        <input type="text" id="name" name="name">
+        <p class="error" id="nameError">This field is required</p>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <div>
+        <input type="email" id="email" name="email">
+        <p class="error" id="emailError">A valid Email address is required</p>
+      </div>
+    </div>
+    <div>
+      <label for="website">Website: </label>
+      <div>
+        <input type="url" id="website" name="website">
+        <p class="error" id="websiteError">A valid url is required</p>
+      </div>
+    </div>
+    <div>
+      <label for="message">Message: </label>
+      <div>
+        <textarea id="message" name="message"></textarea>
+        <p class="error" id="messageError">This field is required</p>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const website = document.getElementById('website').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const websiteError = document.getElementById('websiteError');
+      const messageError = document.getElementById('messageError');
+
+      if (name === '') {
+        nameError.style.display = 'inline';
+      } else {
+        nameError.style.display = 'none';
+      }
+
+      if (email === '') {
+        emailError.style.display = 'inline';
+      } else {
+        emailError.style.display = 'none';
+      }
+
+      if (website === '') {
+        websiteError.style.display = 'inline';
+      } else {
+        websiteError.style.display = 'none';
+      }
+
+      if (message === '') {
+        messageError.style.display = 'inline';
+      } else {
+        messageError.style.display = 'none';
+      }
+
+      return name !== '' && email !== '' && website !== '' && message !== '';
+    }
+  </script></center>
+</body>
+</html>

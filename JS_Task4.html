@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task4
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+        }
+        
+        #result,#result1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Date and Time Display</h1>
+    
+    <button id="showDate">Show Date</button>
+    <div id="result"></div>
+    <button id="showTime">Show Time</button>
+    
+    <div id="result1"></div>
+    
+    <script>
+        document.getElementById("showDate").addEventListener("click", function() {
+            const currentDate = new Date();
+            document.getElementById("result").textContent = "Current Date: " + currentDate.toDateString();
+        });
+        
+        document.getElementById("showTime").addEventListener("click", function() {
+            const currentTime = new Date();
+            document.getElementById("result1").textContent = "Current Time: " + currentTime.toLocaleTimeString();
+        });
+    </script>
+</body>
+</html>
